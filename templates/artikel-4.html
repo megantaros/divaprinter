@@ -1,0 +1,262 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<head>
+  <title>{% if judul_head %} {{judul_head}} - {% endif %} DIVA PRINTER</title>
+</head>
+{% endblock %}
+
+{% block body %} 
+<div class="container-fluid p-0 m-0">
+  <div class="topnav" id="idNav">
+    <a class="active" href="{{ url_for('home') }}" style="width: 220px; height: auto; padding: 15px;">
+      <img src="/static/img/logodivaprinter.png" style="width: 100%; object-fit: cover; overflow: hidden;">
+    </a>
+    <a href="{{ url_for('home') }}">Beranda</a>
+    <a href="{{ url_for('service') }}">Layanan Kami</a>
+    <a href="{{ url_for('about') }}">Tentang Kami</a>
+    <a href="{{ url_for('article') }}">Artikel</a>
+    <a href="javascript:void(0)" class="icon" onclick="proses()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row row-page-article">
+    <div class="col-lg-8 col-12 d-block border column-row-article mb-3" style="padding: 10px;">
+      <div class="span-container" style="padding: 10px 12px 10px;">
+          <span class="span-first-link"><a href="{{ url_for('home') }}">Home</a></span>
+          <span><i class="fa fa-angle-right span-fa"></i></span>
+          <span class="span-last-link"><a href="{{ url_for('article') }}">Article</a></span>
+      </div>
+      <div class="title-page-article">Review Printer Epson L3110: Spesifikasi dan Keunggulannya.</div>
+      <div class="container span-time-article d-flex">
+        <div class="sta-left">
+          <span>BY</span>
+          <span><a href="#">DIFADIN</a></span>
+          <span><i class="fa fa-clock-o"></i> AGUSTUS 31, 2022</span>
+          <span>IN</span>
+          <span><a href="#">ARTICLE</a></span>
+          <span><i class="fa fa-comment-o"></i></span>
+          <span>0</span>
+        </div>
+      </div>
+      <div class="container text-center">
+        <img class="img-page-article" src="/static/img/EPSON L3110 Print _ Scan & Copy.jpg">
+      </div>
+
+      <div class="container-fluid pt-4 pb-1" style="text-align: center;">
+        <div class="addthis_inline_share_toolbox"></div>
+      </div>
+      <!-- Konten Artikel -->
+
+      <!-- Container Konten -->
+      <div class="container">
+        <div class="isi-konten"><span class="berita-artikel">KEBUMEN, DIVAPRINTER.COM - </span>Jika anda mencari printer multifungsi terjangkau dengan kinerja terbaik, Epson L3110 bisa dimasukan ke dalam daftar belanja anda. Printer ini dapat memastikan tingkat kinerja yang optimal dengan mengintegrasikan botol tinta isi otomatis yang setara dengan 35 set  kartrid tinta , memungkinkan hasil tinta lebih tinggi dan penghematan sumber daya yang substansial.
+        <br><br>
+        Kebutuhan kita dalam cetak mencetak baik untuk keperluan kantor maupun keperluan rumahan zaman sekarang ini memang sudah tidak bisa dibendung. Memiliki printer sendiri sangat banyak menguntungkan baik untuk pekerja rumahan ataupun kantoran. Hadirnnya produk epson ini bisa menjadi salah satu jalan keluar terbaik.
+        <br>
+      </div>
+
+      <div class="baca-juga">Baca Juga</div>
+      <div class="container-fluid border-bottom mb-3">
+        <div class="row">
+          {% for baca in artikel %}
+          <div class="col-lg-6 col-12 pb-4 pt-1">
+            <a href="/home/article/{{ baca['routing'] }}" style="text-decoration: none; color: #343538;" class="side">
+              <div class="container d-flex">
+                <img src="{{ baca.img }}" class="rounded img-side-baca">
+                  <div class="title-side-baca">{{ baca.judul }}
+                  <div class="text-muted-side mt-1"><i class="fa fa-clock-o"></i> {{ baca.tanggal }}</div>
+                  </div>
+              </div>
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="isi-konten">Produk epson yang satu ini benar benar menawan. Mereka menawarkan harga yang ekonomi, keamanan tingkat tinggi, dan ketahanan yang kokoh. Di tambah lagi printer ini sudah mengintegrasikan teknologi inkjet yang memastikan pencetakan berkualitas profesional, ideal untuk pekerjaan rumahan atau untuk pengembangan UKM yang sedang anda kerjakan. Berikut Spesifikasi umumnnya: </div>
+        <br></div>
+        <div class="row p-0 m-0">
+            <div class="col-12 justify-content-center text-center">
+                <img src="/static/img/L3110.png" alt="L3110">
+                <div class="container">
+            </div>
+        </div>
+        <div class="list-konten">Spesifikasi EPSON L3110</div>
+        <div class="isi-konten">
+        Dimensi: 375 x 578 x 253 sentimeter
+        <br>
+        Berat: 3,9 kilogram
+        <br>
+        Teknologi: Inkjet
+        <br>
+        Resolusi cetak maksimum: 5.760 x 1.440 dpi
+        <br>
+        Kecepatan cetak: 33 ppm hitam; warna 15ppm
+        <br>
+        Resolusi pemindaian maksimum: 9.600 x 9.600 dpi
+        <br>
+        Resolusi salinan maksimum: 360 x 360 dpi
+        <br>
+        Jumlah salinan: 1 – 20 tanpa PC
+        <br>
+        Konektivitas standar: USB    
+        <br><br>
+        <div class="list-konten">Memilih merek printer tepercaya</div>
+        Printer ini sangat kompatibel dengan beberapa Sistem Operasi. Desainnya bagus, Printer Epson telah berhasil membuat dirinnya menonjol dari berbagai aspek di kelasnnya. Ini adalah peralatan modern, dengan garis yang terdefinisi sempurna untuk memberikan keisimbangan pekerjaan yang baik.Ini juga merupakan printer yang simple, dengan ukuran yang baik dan bobot yang seimbang. Ini berarti bahwa itu tidak memakan lebih banyak ruang ketika anda menaruhnnya di kantor atau rumah.
+        <br><br>
+        <div class="list-konten">Keunggulan Printer L3110 Yang Harus Anda Ketahui
+        </div>
+        Epson EcoTank L3110 merupakan printer multifungsi yang bisa gunakan untuk mencetak, memindai, dan menyalin. Satu unit mampu menjalankan ketiga fungsi ini dengan cara yang paling optimal,dengan kualitas yang profesional. Namun yang paling menjadi ciri khas produk yang satu ini adalah sistem pencetakan bebas kartrid yang revolusioner di masannya.
+        <br><br>
+        Perawatan printer ini tidaklah rumit apalagi untuk urusan pengisian tintam, dengan menggabungkan tangki depan desain mereka dan botol besar tinta yang mengisi secara otomatis, yang juga diberi kode untuk mengisi dengan mudah dalam warna. Sehingga anda tidak perlu kesulitan lagi dalam melakukan pengisian tinta.  
+        <br><br>    
+    </div>
+        <div class="list-konten">Kemampuan Mencetak Yang Cukup Impresif</div>
+        <div class="isi-konten">
+        Produk Epson yang satu ini juga menjadikannya printer yang ekonomis, karena menjamin pencetakan 7.500 halaman berwarna dan 4.500 halaman hitam, menawarkan kinerja dan efektivitas yang sangat tinggi dalam hasilnya. Printer ini dapat memberikan warna yang tajam dan juga kecepatan cetak yang konsisten.
+        <br><br>
+        <div class="list-konten">Pilihan Ukuran Kertas yang Cukup Banyak saat Mencetak
+        </div>
+        Penanganan kertas yang efisien juga terdapat dalam printer yang satu ini. Epson L3110 kompatibel dengan ukuran berbagai kertas seperti A4, A6, legal, letter, setengah  huruf dan bahkan eksekutif. Produk ini juga dapat mencetak folio, amplop, matte, kartu pos, dan foto. Printer ini juga memiliki kapasitas hingga 100 lembar kertas biasa, 30 kartu pos, dan 10 amplop. Kemampuan mencetak itu menjadi hal yang paling menarik.
+        <br><br>
+        <div class="list-konten">Tinta Yang Harus Digunakan Dalam Produk ini</div>
+        Botol isi ulang tinta yang digunakan pada Printer Epson EcoTank L3110 adalah tinta Epson 103, 4 botol tinta hitam, cyan, magenta dan kuning yang harus anda isi dengan benar sehingga printer ini dapat mencetak 4500 halaman hitam dan hingga 7500 halaman. halaman dengan warna. Pastikan juga anda membeli tinta isi ulang yang primium agar printer awet.
+        <br><br>
+        <ul>
+            <li>103 Botol tinta EcoTank Black (WE), SKU: C13T00S14A10, warna hitam.</li>
+            <li>103 botol tinta EcoTank Cyan (WE), SKU: C13T00S24A10, warna cyan.</li>
+            <li>103 botol tinta EcoTank Magenta (WE), SKU: C13T00S34A10, warna magenta.</li>
+            <li>103 botol tinta EcoTank Yellow (WE), SKU: C13T00S44A10, warna kuning</li>
+        </ul>
+        Itu tadi pembahasan tentang printer epson l3110 yang cukup impresif dihargannya. Dengan berbagai fitur yang menwan printer ini benar benar layak anda miliki untuk memenuhi segala kebutuhan cetak mencetak anda baik di rumah maupun di kantor. Jangan ragu untuk berkonsultasi langsung dengan teknisi kami di toko DIVA PRINTER, kami ahlinya printer.</div>
+        </div>
+      </div>
+
+      <div class="container slider-news border-top border-bottom"> 
+        <div class="row">
+            
+            <div class="col-6">
+              <a href="/home/article/{{ '5-Tips-Memilih-Printer-Lebih-Baik-Sedikit-Mahal-tetapi-Awet-dan-Hemat-Biaya-Perawatan' }}" class="prev-next">
+                <div class="title-prev">
+                  Previous Post
+                </div>
+                <div class="container container-prevnext">
+                  <div class="title-next">
+                      {{ p }}
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-6">
+              <a href="/home/article/{{ '6-Cara-Merawat-Printer-yang-Benar-Agar-Awet-dan-Tahan-Lama' }}" class="prev-next">
+                <div class="title-prev">
+                  Next Post
+                </div>
+                <div class="container container-prevnext">
+                  <div class="title-next">
+                      {{ n }}
+                  </div>
+                </div>
+              </a>
+            </div>            
+
+        </div>
+      </div>
+
+      <div class="baca-juga">
+        Related Post
+      </div>
+
+      <div class="row mb-4">
+        <div class="col-4">
+          <a href="/home/article/{{ 'Review-Printer-Epson-L3110:-Spesifikasi-dan-Keunggulannya' }}" class="related-post" style="text-decoration: none;">
+            <div class="container d-block">
+              <img src="/static/img/artikel-3.png" class="rounded img-bottom-baca">
+                <div class="title-bottom-baca">Review Printer Epson L3110: Spesifikasi dan Keunggulannya.
+              <div class="text-muted-side mt-1"><i class="fa fa-clock-o"></i> JUNI, 2022</div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-4">
+          <a href="/home/article/{{ '5-Tips-Memilih-Printer-Lebih-Baik-Sedikit-Mahal-tetapi-Awet-dan-Hemat-Biaya-Perawatan' }}" class="related-post" style="text-decoration: none;">
+            <div class="container d-block">
+              <img src="/static/img/toko.jpg" class="rounded img-bottom-baca">
+                <div class="title-bottom-baca">5 Tips Memilih Printer, Lebih Baik Sedikit Mahal tetapi Awet dan Hemat Biaya Perawatan.
+              <div class="text-muted-side mt-1"><i class="fa fa-clock-o"></i> JUNI, 2022</div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-4">
+          <a href="/home/article/{{ 'SSD-atau-Hardisk-Mana-yang-Lebih-Baik' }}" class="related-post" style="text-decoration: none;">
+            <div class="container d-block">
+              <img src="/static/img/artikel-2.jpg" class="rounded img-bottom-baca">
+                <div class="title-bottom-baca">SSD atau Hardisk? Mana yang Lebih Baik.
+              <div class="text-muted-side mt-1"><i class="fa fa-clock-o"></i> JUNI, 2022</div>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+      </div>
+
+    </div>
+
+    <div class="col-lg-4 col-12">
+      <div class="wrapper border">
+        <div class="box">
+          <input checked="checked" id="box1" name="box" type="radio"> 
+          <label for="box1">Trending</label>
+          <div class="content-1">
+
+            <!-- Artikel SideBar Kanan -->
+            {% for side in artikel %}
+            <a href="/home/article/{{ side['routing'] }}" style="text-decoration: none;" class="side" >
+              <div class="container d-flex">
+                <img src="{{ side.img }}" class="rounded img-side" style="width: 100%">
+                <div class="title-side">{{ side.judul }}
+                  <div class="text-muted-side mt-1"><i class="fa fa-clock-o"></i> {{ side.tanggal }}</div>
+                </div>
+              </div>
+            </a>
+            {% endfor %}
+
+          </div>
+
+          <input id="box2" name="box" type="radio"> 
+          <label for="box2">Comments</label>
+          <div class="content-2">
+            ...
+          </div>
+          <input id="box3" name="box" type="radio"> 
+          <label for="box3">Latest</label>
+          <div class="content-3">
+
+            <!-- Artikel SideBar Kanan -->
+            {% for side in artikel %}
+            <a href="/home/article/{{ side['routing'] }}" style="text-decoration: none;" class="side" >
+              <div class="container d-flex">
+                <img src="{{ side.img }}" class="rounded img-side" style="width: 100%">
+                <div class="title-side">{{ side.judul }}
+                  <div class="text-muted-side mt-1"><i class="fa fa-clock-o"></i> {{ side.tanggal }}</div>
+                </div>
+              </div>
+            </a>
+            {% endfor %}
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}  

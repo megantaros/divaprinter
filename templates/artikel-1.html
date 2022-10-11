@@ -1,0 +1,216 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<head>
+  <title>{% if judul_head %} {{judul_head}} - {% endif %} DIVA PRINTER</title>
+</head>
+{% endblock %}
+
+{% block body %} 
+<div class="container-fluid p-0 m-0">
+  <div class="topnav" id="idNav">
+    <a class="active" href="{{ url_for('home') }}" style="width: 220px; height: auto; padding: 15px;">
+      <img src="/static/img/logodivaprinter.png" style="width: 100%; object-fit: cover; overflow: hidden;">
+    </a>
+    <a href="{{ url_for('home') }}">Beranda</a>
+    <a href="{{ url_for('service') }}">Layanan Kami</a>
+    <a href="{{ url_for('about') }}">Tentang Kami</a>
+    <a href="{{ url_for('article') }}">Artikel</a>
+    <a href="javascript:void(0)" class="icon" onclick="proses()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row row-page-article">
+    <div class="col-lg-8 col-12 d-block border column-row-article mb-3" style="padding: 10px;">
+      <div class="span-container" style="padding: 10px 12px 10px;">
+          <span class="span-first-link"><a href="{{ url_for('home') }}">Home</a></span>
+          <span><i class="fa fa-angle-right span-fa"></i></span>
+          <span class="span-last-link"><a href="{{ url_for('article') }}">Article</a></span>
+      </div>
+      <div class="title-page-article">6 Cara Merawat Printer yang Benar agar Awet dan Tahan Lama</div>
+      <div class="container span-time-article d-flex">
+        <div class="sta-left">
+          <span>BY</span>
+          <span><a href="#">DIFADIN</a></span>
+          <span><i class="fa fa-clock-o"></i> AGUSTUS 31, 2022</span>
+          <span>IN</span>
+          <span><a href="#">ARTICLE</a></span>
+          <span><i class="fa fa-comment-o"></i></span>
+          <span>0</span>
+        </div>
+      </div>
+      <div class="container text-center">
+        <img class="img-page-article" src="/static/img/artikel-1.webp">
+      </div>
+
+      <div class="container-fluid pt-4 pb-1" style="text-align: center;">
+        <div class="addthis_inline_share_toolbox"></div>
+      </div>
+      <!-- Konten Artikel -->
+
+      <!-- Container Konten -->
+      <div class="container">
+        <div class="isi-konten"><span class="berita-artikel">KEBUMEN, DIVAPRINTER.COM - </span>Canon melalui PT Datascrip meluncurkan tiga printer ink tank anyar di Indonesia, yakni G6070, G5070, dan GM2070. (Liputan6.com/Agustinus M.Damar) Cara merawat printer yang pertama bisa diawali dari kebiasaan untuk menggunakan printer secara rutin.</div>
+        <div class="list-konten">1. Rutin Menggunakan Printer</div>
+        <div class="isi-konten">Di dalam body dari printer terdapat sangat banyak suku cadang yang berfungsi untuk menggerakan bagian-bagian dari printer. Pada tiap suku cadang tersebut terdapat semacam pelumas yang membuat kinerja printer menjadi lebih halus. Itulah mengapa, apabila printer tidak digunakan dalam jangka waktu yang terlalu lama, maka pelumas yang ada di suku cadang tersebut akan berlahan kering. Layaknya kendaraan, apabila bagian dari mesin printer bergerak tanpa pelumas, maka akan menyebabkan kinerja printer menjadi lambat dan tersendat. Bahkan, yang paling parah printer akan rusak karena suku cadangnya patah.Selain dari segi suku cadang, menggunakan printer secara rutin juga menghindari kualitas dari cartridge serta head printer menurun. Sebab, ada beberapa jenis tinta yang dapat menyebabkan kebuntuan pada cartridge atau head printer tersebut apabila dalam kurun waktu terlalu lama printer tidak digunakan.</div>
+      </div>
+
+      <div class="baca-juga">Baca Juga</div>
+      <div class="container-fluid border-bottom mb-3">
+        <div class="row">
+          {% for baca in artikel %}
+          <div class="col-lg-6 col-12 pb-4 pt-1">
+            <a href="/home/article/{{ baca['routing'] }}" style="text-decoration: none; color: #343538;" class="side">
+              <div class="container d-flex">
+                <img src="{{ baca.img }}" class="rounded img-side-baca">
+                  <div class="title-side-baca">{{ baca.judul }}
+                  <div class="text-muted-side mt-1"><i class="fa fa-clock-o"></i> {{ baca.tanggal }}</div>
+                  </div>
+              </div>
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="list-konten">2. Pilih Tinta Printer yang Tepat</div>
+        <div class="isi-konten">Selain risiko cartridge dan head printer yang menurun akibat printer jarang digunakan, penggunaan tinta juga perlu diperhatikan. Sebab memilih jenis tinta yang tepat akan menjaga keawetan dari printer milik Anda. Bahkan banyak sekali tinta yang beredar dipasaran justru ikut andil dalam kerusakan printer ketika tidak digunakan, yaitu dengan menyebabkan kebuntuan pada cartridge atau head printer. Selain itu, setiap merek dan jenis tinta yang dijual juga memiliki tingkat kekentalan yang berbeda - beda. Itulah mengapa penting untuk memastikan Anda tetap memakai tinta yang kualitas dan karakternya sama dengan tinta yang pertama kali digunakan. Namun, apabila Anda terpaksa mengganti tinta original printer Anda menggunakan jenis tinta compatible, maka ada baiknya Anda melakukan konsultasi dengan teknisi printer.</div>
+
+        <div class="list-konten">3. Jangan Mencetak dalam Jumlah Banyak</div>
+        <div class="isi-konten">Salah satu cara merawat printer yang juga efektif yaitu dengan mencetak satu persatu. Sebab, hal ini akan memberi sedikit waktu istirahat kepada gear printer untuk melakukan proses pendinginan pada bagian permukaan. Lalu, pada bagian head printer juga akan secara otomatis melakukan cleaning agar hasil cetak tetao terjaga kualitasnya.
+        Kategori mencetak banyak ini yaitu ketika proses mencetak lebih dari 25 lembar tanpa henti. Apabila hal tersebut tetap dilakukan, maka gear printer akan lebih cepat panas dan head printer tidak sempat melakukan cleaning otomatis. Dimana hal ini akan berakibat kepada hasil cetak yang biasanya menjadi putus-putus atau warna tidak menjadi buram.</div>
+
+        <div class="list-konten">4. Perhatikan Cara Menyimpan Printer</div>
+        <div class="isi-konten">Cara merawat printer yaitu memperhatikan di mana Anda meletakkan dan bagaimana menjaga agar printer tersebut bebas dari debu dan risiko rusak lainnya. Hal ini menjadi sangat penting, sebab pada printer terdapat berbagai komponen penting yang mudah rusak terutama jika terkena debu. Maka ada baiknya jika saat printer tidak dipakai, Anda menutupinya dengan kain. Selain itu, lebih baik Anda menaruh printer di atas meja atau tempat yang cukup tinggi. Hal ini untuk menghindari printer tersenggol dan rusak atau kabel data printer dimakan tikus.</div>
+
+        <div class="list-konten">5. Hindari Penumpukkan Colokan pada Instalasi Printer</div>
+        <div class="isi-konten">Penumpukan colokan pada printer sangat berbahaya bagi kita, selain menyebabkan terjadinya kebakaran jika terjadi arus pendek, penumpukan colokan juga dapat menyebabkan sengatan arus listrik jika ada colokan yang tidak terpasang dengan baik, kebanyakan pada saat kita menumpuk colokan selalu ada saja salah satu colokan yang tidak terpasang sempurna (kurang masuk) dan inilah yang menyebabkan sengatan arus litrik jika tersentuh. Arus pendek yang terjadi juga dapat memperpendek umur printer karena suplai daya yang masuk menjadi tidak stabil. Hal ini akan berdampak pada hasil cetak yang menurun hingga printer mati total.</div>
+      </div>
+
+      <div class="container slider-news border-top border-bottom"> 
+        <div class="row">
+            
+            <div class="col-6">
+              <a href="/home/article/{{ 'Review-Printer-Epson-L3110:-Spesifikasi-dan-Keunggulannya' }}" class="prev-next">
+                <div class="title-prev">
+                  Previous Post
+                </div>
+                <div class="container container-prevnext">
+                  <div class="title-next">
+                      {{ p }}
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-6">
+              <a href="/home/article/{{ 'SSD-atau-Hardisk-Mana-yang-Lebih-Baik' }}" class="prev-next">
+                <div class="title-prev">
+                  Next Post
+                </div>
+                <div class="container container-prevnext">
+                  <div class="title-next">
+                      {{ n }}
+                  </div>
+                </div>
+              </a>
+            </div>            
+
+        </div>
+      </div>
+
+      <div class="baca-juga">
+        Related Post
+      </div>
+
+      <div class="row mb-4">
+        <div class="col-4">
+          <a href="/home/article/{{ 'Review-Printer-Epson-L3110:-Spesifikasi-dan-Keunggulannya' }}" class="related-post" style="text-decoration: none;">
+            <div class="container d-block">
+              <img src="/static/img/artikel-3.png" class="rounded img-bottom-baca">
+                <div class="title-bottom-baca">Review Printer Epson L3110: Spesifikasi dan Keunggulannya.
+              <div class="text-muted-side mt-1"><i class="fa fa-clock-o"></i> JUNI, 2022</div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-4">
+          <a href="/home/article/{{ '5-Tips-Memilih-Printer-Lebih-Baik-Sedikit-Mahal-tetapi-Awet-dan-Hemat-Biaya-Perawatan' }}" class="related-post" style="text-decoration: none;">
+            <div class="container d-block">
+              <img src="/static/img/toko.jpg" class="rounded img-bottom-baca">
+                <div class="title-bottom-baca">5 Tips Memilih Printer, Lebih Baik Sedikit Mahal tetapi Awet dan Hemat Biaya Perawatan.
+              <div class="text-muted-side mt-1"><i class="fa fa-clock-o"></i> JUNI, 2022</div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-4">
+          <a href="/home/article/{{ 'SSD-atau-Hardisk-Mana-yang-Lebih-Baik' }}" class="related-post" style="text-decoration: none;">
+            <div class="container d-block">
+              <img src="/static/img/artikel-2.jpg" class="rounded img-bottom-baca">
+                <div class="title-bottom-baca">SSD atau Hardisk? Mana yang Lebih Baik.
+              <div class="text-muted-side mt-1"><i class="fa fa-clock-o"></i> JUNI, 2022</div>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+      </div>
+
+    </div>
+
+    <div class="col-lg-4 col-12">
+      <div class="wrapper border">
+        <div class="box">
+          <input checked="checked" id="box1" name="box" type="radio"> 
+          <label for="box1">Trending</label>
+          <div class="content-1">
+
+            <!-- Artikel SideBar Kanan -->
+            {% for side in artikel %}
+            <a href="/home/article/{{ side['routing'] }}" style="text-decoration: none;" class="side" >
+              <div class="container d-flex">
+                <img src="{{ side.img }}" class="rounded img-side" style="width: 100%">
+                <div class="title-side">{{ side.judul }}
+                  <div class="text-muted-side mt-1"><i class="fa fa-clock-o"></i> {{ side.tanggal }}</div>
+                </div>
+              </div>
+            </a>
+            {% endfor %}
+
+          </div>
+
+          <input id="box2" name="box" type="radio"> 
+          <label for="box2">Comments</label>
+          <div class="content-2">
+            ...
+          </div>
+          <input id="box3" name="box" type="radio"> 
+          <label for="box3">Latest</label>
+          <div class="content-3">
+
+            <!-- Artikel SideBar Kanan -->
+            {% for side in artikel %}
+            <a href="/home/article/{{ side['routing'] }}" style="text-decoration: none;" class="side" >
+              <div class="container d-flex">
+                <img src="{{ side.img }}" class="rounded img-side" style="width: 100%">
+                <div class="title-side">{{ side.judul }}
+                  <div class="text-muted-side mt-1"><i class="fa fa-clock-o"></i> {{ side.tanggal }}</div>
+                </div>
+              </div>
+            </a>
+            {% endfor %}
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}  

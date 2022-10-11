@@ -1,0 +1,150 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<head>
+  <title>{% if judul_head %} {{judul_head}} - {% endif %} DIVA PRINTER</title>
+</head>
+{% endblock %}
+
+{% block body %}  
+<div class="container-fluid p-0 m-0">
+  <div class="topnav" id="idNav">
+    <a class="active" href="{{ url_for('home') }}" style="width: 220px; height: auto; padding: 15px;">
+      <img src="/static/img/logodivaprinter.png" style="width: 100%; object-fit: cover; overflow: hidden;">
+    </a>
+    <a href="{{ url_for('home') }}">Beranda</a>
+    <a href="{{ url_for('service') }}">Layanan Kami</a>
+    <a href="{{ url_for('about') }}">Tentang Kami</a>
+    <a href="{{ url_for('article') }}">Artikel</a>
+    <a href="javascript:void(0)" class="icon" onclick="proses()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<div class="container-fluid p-4">
+    <div class="row">
+        <div class="col-lg-6 col-12 p-2">
+          <a href="/home/article/{{ '6-Cara-Merawat-Printer-yang-Benar-Agar-Awet-dan-Tahan-Lama' }}" style="text-decoration: none;">
+            <div class="container-img">
+                <img src="/static/img/artikel-1.webp" class="image-article-left image-opacity" style="width: 100%;">
+                <div class="bottomleft-text p-2">
+                    <div class="terkait">Artikel Terkait</div>
+                    <div class="judul-artikel">6 Cara Merawat Printer yang Benar agar Awet dan Tahan Lama
+                    </div>
+                </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-lg-6 col-12">
+            <div class="row">
+                <div class="col-lg-12 col-6 p-2">
+                  <a href="/home/article/{{ 'SSD-atau-Hardisk-Mana-yang-Lebih-Baik' }}" style="text-decoration: none;">
+                    <div class="container-img-2">
+                        <img src="/static/img/artikel-2.jpg" class="image-article-right image-opacity" style="width: 100%;">
+                        <div class="bottomleft-text">
+                            <div class="terkait">Artikel Terkait</div>
+                            <div class="judul-artikel">SSD ATAU HARDISK? MANA YANG LEBIH BAIK?</div>
+                        </div>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="col-lg-12 col-6 p-2">
+                  <a href="/home/article/{{ '5-Tips-Memilih-Printer-Lebih-Baik-Sedikit-Mahal-tetapi-Awet-dan-Hemat-Biaya-Perawatan' }}" style="text-decoration: none;">
+                    <div class="container-img-2">
+                        <img src="/static/img/artikel-3.png" class="image-article-right image-opacity" style="width: 100%;">
+                        <div class="bottomleft-text">
+                            <div class="terkait">Artikel Terkait</div>
+                            <div class="judul-artikel">5 tips memilih printer</div>
+                        </div>
+                    </div>
+                  </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row p-3">
+
+    <div class="col-lg-8 col-12 d-block border column-row-article">
+        <!-- Konten Artikel -->
+        {% for a in artikel %}
+        <div class="container d-flex mb-5" style="padding-top: 25px;">
+          <a href="/home/article/{{ a['routing'] }}">
+            <div class="container-img-3">
+              <img src="{{ a.img }}" class="image-sub-article">
+              <div class="topleft-text">
+                  <div class="terkait p-1">Artikel</div>
+              </div>
+          </div>
+          </a>
+          <div class="content-article">
+              <div class="title-article">
+                <a href="/home/article/{{ a['routing'] }}">{{ a.judul }}</a>
+              </div>
+              <div class="text-muted mb-3">
+                  BY <a href="#" class="publisher">{{ a.penulis }}</a> <i class="fa fa-clock-o"></i> {{ a.tanggal }} <i class="fa fa-comment-o"></i> 0
+              </div>
+              <p class="p-article">{{ a.isi_konten }}</p>
+              <a href="/home/article/{{ a['routing'] }}" class="btn-read">READ MORE</a>
+          </div>
+        </div>
+        {% endfor %}
+
+    </div>
+
+    <div class="col-lg-4 col-12">
+      <div class="wrapper border">
+        <div class="box">
+          <input checked="checked" id="box1" name="box" type="radio"> 
+          <label for="box1">Trending</label>
+          <div class="content-1">
+
+            <!-- Artikel SideBar Kanan -->
+            {% for side in artikel %}
+            <a href="/home/article/{{ side['routing'] }}" style="text-decoration: none;" class="side" >
+              <div class="container d-flex">
+                <img src="{{ side.img }}" class="rounded img-side" style="width: 100%">
+                <div class="title-side">{{ side.judul }}
+                  <div class="text-muted-side mt-1"><i class="fa fa-clock-o"></i> {{ side.tanggal }}</div>
+                </div>
+              </div>
+            </a>
+            {% endfor %}
+
+          </div>
+
+          <input id="box2" name="box" type="radio"> 
+          <label for="box2">Comments</label>
+          <div class="content-2">
+            ...
+          </div>
+          <input id="box3" name="box" type="radio"> 
+          <label for="box3">Latest</label>
+          <div class="content-3">
+
+            <!-- Artikel SideBar Kanan -->
+            {% for side in artikel %}
+            <a href="/home/article/{{ side['routing'] }}" style="text-decoration: none;"  class="side">
+              <div class="container d-flex">
+                <img src="{{ side.img }}" class="rounded img-side" style="width: 100%">
+                <div class="title-side">{{ side.judul }}
+                  <div class="text-muted-side mt-1"><i class="fa fa-clock-o"></i> {{ side.tanggal }}</div>
+                </div>
+              </div>
+            </a>
+            {% endfor %}
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}  

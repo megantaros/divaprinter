@@ -1,0 +1,111 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<head>
+  <title>{% if judul_head %} {{judul_head}} - {% endif %} DIVA PRINTER</title>
+</head>
+{% endblock %}
+
+{% block body %} 
+
+<div class="bg-img-service">
+  <div class="topnav" id="idNav">
+    <a class="active" href="{{ url_for('home') }}" style="width: 220px; height: auto; padding: 15px;">
+      <img src="/static/img/logodivaprinter.png" style="width: 100%; object-fit: cover; overflow: hidden;">
+    </a>
+    <a href="{{ url_for('home') }}">Beranda</a>
+    <a href="{{ url_for('service') }}">Layanan Kami</a>
+    <a href="{{ url_for('about') }}">Tentang Kami</a>
+    <a href="{{ url_for('article') }}">Artikel</a>
+    <a href="javascript:void(0)" class="icon" onclick="proses()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+  <div class="text-block-service">
+    <div class="text-in-service">
+      <p style="color: #0e52a5; font-family: service; font-size: 32px; margin: 0;" class="p-service">Service</p>
+      <div class="underline-service"></div>
+      <p style="font-family: service-text-block; font-size: 46px; color: #051d3e; margin-top: 0px;" class="p-service">PRINTER PANGGILAN</p>
+      <p style="color: #40434d; font-weight: 600;">Melayani Service Printer, Service Laptop, dan Penjualan Alat Tulis Kantor Bisa Dipanggil ke Lokasi</p>
+      <button class="btn btn-danger">HUBUNGI KAMI</button>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid" style="padding: 0px 40px 0px 40px;">
+  <img src="/static/img/logo-garansi.jpg" class="img-service">
+  <div class="row mb-3">
+    <div class="title-service">
+      LAYANAN
+    </div>
+    <div class="row mb-3">
+      <div class="col-lg-2 col-12 d-block text-center">
+        <img src="/static/img/printer.png" class="img-layanan">
+        <div class="mt-2"></div>
+        <h6>Jasa</h6>
+      </div>
+      <div class="col-lg-8 col-12 d-flex">
+        <ul style="font-weight: 600;">
+          <li>Service Printer Laser</li>
+          <li>Service Printer Inkjet/Tinta</li>
+          <li>Service Printer Dotmetrix</li>
+        </ul>
+        <ul style="font-weight: 600;;">
+          <li>Service Printer Fax</li>
+          <li>Service Printer Thermal dan ID-Card</li>
+          <li>Service Printer Passbook</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-lg-2 col-12 d-block text-center">
+        <img src="/static/img/shopping-cart.png" class="img-layanan">
+        <div class="mt-2"></div>
+        <h6>Penjualan</h6>
+      </div>
+      <div class="col-lg-8 col-12 d-flex">
+        <ul style="font-weight: 600;">
+          <li>Printer dan Komputer</li>
+          <li>Tinta</li>
+          <li>Toner</li>
+        </ul>
+        <div class="mx-3"></div>
+        <ul style="font-weight: 600;">
+          <li>Refil Tinta dan Toner</li>
+          <li>Suku Cadang Printer</li>
+          <li>Alat Tulis Kantor (ATK)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-lg-2 col-12 d-block text-center">
+        <img src="/static/img/scooter.png" class="img-layanan">
+        <div class="mt-2"></div>
+        <h6>Panggilan</h6>
+      </div>
+      <div class="col-lg-8 col-12">
+        <ul style="font-weight: 600;">
+          <li>Melayani Panggilan dan Pengerjaan Service di tempat</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid contdesc" style="padding: 10px 40px 20px;">
+    <div class="slider">
+      <div class="slides">
+        <div><img src="/static/img/1.jpg" alt="" class="img-slide"></div>
+        <div><img src="/static/img/2.jpg" alt="" class="img-slide"></div>
+        <div><img src="/static/img/3.jpg" alt="" class="img-slide"></div>
+        <div><img src="/static/img/4.jpg" alt="" class="img-slide"></div>
+        <div><img src="/static/img/5.jpg" alt="" class="img-slide"></div>
+        <div><img src="/static/img/6.jpg" alt="" class="img-slide"></div>
+        <div><img src="/static/img/7.jpg" alt="" class="img-slide"></div>
+      </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,246 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<head>
+  <title>{% if judul_head %} {{judul_head}} - {% endif %} DIVA PRINTER</title>
+</head>
+{% endblock %}
+
+{% block body %}  
+
+<!-- Navbar -->
+<div class="bg-img">
+  <div class="topnav" id="idNav">
+    <a class="active" href="{{ url_for('home') }}" style="width: 220px; height: auto; padding: 15px;">
+      <img src="/static/img/logodivaprinter.png" style="width: 100%; object-fit: cover; overflow: hidden;">
+    </a>
+    <a href="{{ url_for('home') }}">Beranda</a>
+    <a href="{{ url_for('service') }}">Layanan Kami</a>
+    <a href="{{ url_for('about') }}">Tentang Kami</a>
+    <a href="{{ url_for('article') }}">Artikel</a>
+    <a href="javascript:void(0)" class="icon" onclick="proses()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+    <div class="textindex">
+      <h2>Punya Masalah</h2>
+      <h2 class="mb-4">Dengan Printer Kamu?</h2>
+      <p>Lansung Saja</p>
+      <a href="#"><div class="btn btn-danger">HUBUNGI KAMI</div></a>
+    </div>
+</div>
+
+<!-- Konten -->
+<div class="container-fluid" style="background-color: #eef4fb;">
+  <div class="container" style="opacity: 1;">
+    <div class="home_hero">
+      PESAN SEKARANG LAYANAN TERBAIK DIVA PRINTER
+      <div class="lead">Jasa kami menjangkau seluruh wilayah di Kebumen</div>
+    </div>  
+
+    <div class="row" style="padding: 0px 100px 0px 100px;">
+      <div class="col-lg-4 col-12 mb-2">
+        <div class="card card-img" style="padding: 10px;">
+          <img src="{{url_for('static',filename='/img/toko.jpg')}}" alt="Avatar">
+          <div class="container text-center card-title">
+            <h6 style="color: #17509d;">Service Printer dan Service Komputer</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-12 mb-2">
+        <div class="card card-img" style="padding: 10px;">
+          <img src="{{url_for('static',filename='/img/penjualan-printer.jpg')}}" alt="Avatar">
+          <div class="container text-center card-title">
+            <h6 style="color: #17509d;">Penjualan Printer, Komputer, dan Alat Tulis Kantor</h5>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 col-12 mb-2">
+        <div class="card card-img" style="padding: 10px;">
+          <img src="{{url_for('static',filename='/img/call-service.jpg')}}" alt="Avatar">
+          <div class="container text-center card-title">
+            <h6 style="color: #17509d;">Menerima Service Panggilan khusus Wilayah Kebumen</h5>
+          </div>
+        </div>
+      </div>
+            
+      <div class="home_hours text-center mt-5 d-none d-sm-block">
+        Jam Kerja : Senin - Jumat : 08:00 - 19:00 WIB
+        <span class="ml-5">Sabtu - Minggu &amp; Hari Libur : 09:00 - 18:00 WIB</span>
+      </div>
+
+    </div>  
+  </div>
+</div>
+
+<div class="container border-bottom how">
+  <div class="home_how text-center">
+      CARA MEMESAN DI DIVA PRINTER
+  </div>
+  <div class="row" style="margin-bottom: 50px;">
+      <div class="col-lg-4" style="margin-top: 30px;">
+          <div class="border-0 text-center">
+              <img src="{{url_for('static',filename='/img/select.png')}}" style="width: 90px; height: 90px; margin-bottom: 30px;">
+              <div class="card-body">
+                <h5 style="margin-top: 10px;">Hubungi Kami via WA atau Telephone</h5>
+              </div>
+          </div>
+      </div>
+      <div class="col-lg-4" style="margin-top: 30px;">
+        <div class="border-0 text-center">
+            <img src="{{url_for('static',filename='/img/location.png')}}" style="width: 90px; height: 90px; margin-bottom: 30px;">
+            <div class="card-body">
+              <h5 style="margin-top: 10px;">Pilih Lokasi dan Waktu</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4" style="margin-top: 30px;">
+      <div class="border-0 text-center">
+          <img src="{{url_for('static',filename='/img/customer-service.png')}}" style="width: 90px; height: 90px; margin-bottom: 30px;">
+          <div class="card-body">
+            <h5 style="margin-top: 10px;">Nikmati Layanan dari Kami</h5>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container home_why">
+  <div class="home_how text-center">
+      MENGAPA DIVA PRINTER?
+  </div>
+
+  <div class="row">
+      <div class="col-sm-12 col-lg-1 offset-lg-1 offset-3 text-center p-3">
+          <img src="{{url_for('static',filename='/img/mechanic.png')}}" class="why mb-2 p-2" style="width: 85px; height:auto;">
+      </div>
+      <div class="col-sm-12 col-lg-10">
+          <div class="ttl mx-2">Teknisi terlatih dan siap melayani anda kapanpun</div>
+          <div class="mx-2">
+            Berdasarkan pengalaman jam terbang yang tinggi serta dapat dipercaya, Diva Printer siap melayani Anda kapanpun dan dimanapun.
+          </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-sm-12 col-lg-1 offset-lg-1 offset-3  text-center p-3">
+          <img src="{{url_for('static',filename='/img/wallet.png')}}" class="why mb-2 p-3" style="width: 90px; height:auto;">
+      </div>
+      <div class="col-sm-12 col-lg-10">
+          <div class="ttl mx-2">Harga tetap dengan garansi produk untuk service printer</div>
+          <div class="mx-2">
+            Diva Printer memberikan garansi layanan servis printer serta harga yang tetap bahkan terjangkau. 
+          </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-sm-12 col-lg-1 offset-lg-1 offset-3  text-center p-3">
+          <img src="{{url_for('static',filename='/img/guarantee.png')}}" class="why mb-2 p-2" style="width: 85px; height:auto;">
+      </div>
+      <div class="col-sm-12 col-lg-10 ">
+          <div class="ttl mx-2">Menerima uang tunai atau transfer dengan aman</div>
+          <div class="mx-2">
+            Pembayaran bisa dilakukan dengan cara tunai maupun transfer. 
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="testimonials-clean">
+    <div class="container-fluid" style="background-color: #17509d;">
+        <div class="intro">
+            <h2 class="text-center">TESTIMONI</h2>
+        </div>
+        <div class="row people">
+            <div class="col-md-6 col-lg-4 item">
+                <div class="box rounded">
+                    <p class="description">Terima Kasih atas pelayanannya.</p>
+                </div>
+                <div class="author"><img class="rounded-circle" src="/static/img/testi-1.jpeg">
+                    <h5 class="name">Lik Kardi</h5>
+                    <p class="title">KUA Mirit.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 item">
+                <div class="box rounded">
+                    <p class="description">Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, et interdum justo suscipit id.</p>
+                </div>
+                <div class="author"><img class="rounded-circle" src="/static/img/testi-2.jpeg">
+                    <h5 class="name">Patuhan</h5>
+                    <p class="title">KUA Giwangan.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 item">
+                <div class="box rounded">
+                    <p class="description">Aliquam varius finibus est, et interdum justo suscipit. Vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu.</p>
+                </div>
+                <div class="author"><img class="rounded-circle" src="/static/img/testi-3.jpeg">
+                    <h5 class="name">Siti</h5>
+                    <p class="title">KUA Bikini Bottom.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container border-bottom">
+  <div class="home_how text-center home_partner">
+    PARTNER
+  </div>
+  <div class="row row-partner">
+    <div class="col-lg-4 col-4 col-logo">
+      <img src="https://1.bp.blogspot.com/-6MYl1qm5rf0/X5JH7iqKJcI/AAAAAAAAHWY/vjHRwotZB7EqzQBwspOdQKM3kQKiy3S2gCLcBGAsYHQ/s1510/logo-bni.png">
+    </div>
+    <div class="col-lg-4 col-4 col-logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/BANK_BRI_logo.svg/2560px-BANK_BRI_logo.svg.png">
+    </div>
+    <div class="col-lg-4 col-4 col-logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Logo_PLN.svg/2560px-Logo_PLN.svg.png">
+    </div>
+  </div>
+  <div class="row row-partner">
+    <div class="col-lg-4 col-4 col-logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Kebumen_2022.png/599px-Kebumen_2022.png" style="width: 30%;">
+    </div>
+    <div class="col-lg-4 col-4 col-logo">
+      <img src="https://asset.kompas.com/crops/9px-Z3IYTiNoGOoU4q8odyPt1Kk=/0x0:900x600/750x500/data/photo/2017/04/09/3564836977.jpg">
+    </div>
+    <div class="col-lg-4 col-4 col-logo">
+      <img src="https://play-lh.googleusercontent.com/mCDicMPpDI8wKdhIYTPpZt2x8zhmTwaCK7KsgB6AIrZCdZjvyxOxPgaUPKhU7jSZRg">
+    </div>
+  </div>
+  <div class="row row-partner">
+    <div class="col-lg-4 col-4 col-logo">
+      <img src="http://1.bp.blogspot.com/-DLKqBeJ-e4M/VdUqx7T_lYI/AAAAAAAASME/kSJtLorUdKM/s1600/1.png">
+    </div>
+    <div class="col-lg-4 col-4 col-logo">
+      <img src="https://pa-manado.go.id/wp-content/uploads/2016/05/cropped-logo-pa-manado.png">
+    </div>
+    <div class="col-lg-4 col-4 col-logo">
+      <img src="http://rsud.pacitankab.go.id/wp-content/uploads/2019/08/Logo-BPJS-Kesehatan.png">
+    </div>
+  </div>
+</div>
+      
+<div class="container">
+  <div class="home_how text-center">
+    <div class="d-block mb-5">DISPONSORI OLEH</div> 
+    <img class="sponsor" src="/static/img/sponsor.jpg">
+  </div>
+</div>
+
+<div class="container-fluid contdesc" style="padding: 40px;">
+  <div class="text ttl mb-4" style="font-weight: 700;">
+    Diva Printer Merupakan Penyedia Produk Spesialis Printer Yang Lengkap
+  </div>
+  <div class="desc">Servis rumah dan kantor no. 1 di KEBUMEN</div> 
+    <div class="d-block"></div>
+    <p>Kami adalah perusahaan penyedia Produk Spesialis Printer dan perlengkapanya yang memberikan kemudahan kepada pelanggan untuk memecahkan masalah seputar printer melalui tim teknisi profesional yang handal dan berpengalaman lebih dari sepuluh tahun. Perusahaan kami telah berdiri sejak 2008 melalui akta notaris dan ijin usaha terbaru dari Kementrian Investasi-BKPM dengan NIB 9120107901729
+    DIVA PRINTER selalu berupaya memberikan produk dan layanan terbaik untuk menjaga kualitas serta kepercayaan pelanggan dengan memberikan kemudahan akses melalui layanan panggil via chat atau telepon. Kami dengan senang hati memberikan layanan/support pengetahuan terhadap produk sesuai dengan kebutuhan dan penggunaan konsumen.
+    Hingga saat ini kami terus berkembang dan meningkatkan layanan dengan menyediakan jasa perbaikan laptop dan komputer yang terpercaya dan dapat diandalkan</p>
+</div>
+
+{% endblock %}

@@ -1,0 +1,219 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<head>
+  <title>{% if judul_head %} {{judul_head}} - {% endif %} DIVA PRINTER</title>
+</head>
+{% endblock %}
+
+{% block body %} 
+<div class="container-fluid p-0 m-0">
+  <div class="topnav" id="idNav">
+    <a class="active" href="{{ url_for('home') }}" style="width: 220px; height: auto; padding: 15px;">
+      <img src="/static/img/logodivaprinter.png" style="width: 100%; object-fit: cover; overflow: hidden;">
+    </a>
+    <a href="{{ url_for('home') }}">Beranda</a>
+    <a href="{{ url_for('service') }}">Layanan Kami</a>
+    <a href="{{ url_for('about') }}">Tentang Kami</a>
+    <a href="{{ url_for('article') }}">Artikel</a>
+    <a href="javascript:void(0)" class="icon" onclick="proses()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row row-page-article">
+    <div class="col-lg-8 col-12 d-block border column-row-article mb-3" style="padding: 10px;">
+      <div class="span-container" style="padding: 10px 12px 10px;">
+          <span class="span-first-link"><a href="{{ url_for('home') }}">Home</a></span>
+          <span><i class="fa fa-angle-right span-fa"></i></span>
+          <span class="span-last-link"><a href="{{ url_for('article') }}">Article</a></span>
+      </div>
+      <div class="title-page-article">5 Tips Memilih Printer, Lebih Baik Sedikit Mahal tetapi Awet dan Hemat Biaya Perawatan.</div>
+      <div class="container span-time-article d-flex">
+        <div class="sta-left">
+          <span>BY</span>
+          <span><a href="#">DIFADIN</a></span>
+          <span><i class="fa fa-clock-o"></i> AGUSTUS 31, 2022</span>
+          <span>IN</span>
+          <span><a href="#">ARTICLE</a></span>
+          <span><i class="fa fa-comment-o"></i></span>
+          <span>0</span>
+        </div>
+      </div>
+      <div class="container text-center">
+        <img class="img-page-article" src="/static/img/artikel-3.png">
+      </div>
+
+      <div class="container-fluid pt-4 pb-1" style="text-align: center;">
+        <div class="addthis_inline_share_toolbox"></div>
+      </div>
+      <!-- Konten Artikel -->
+
+      <!-- Container Konten -->
+      <div class="container">
+        <div class="isi-konten"><span class="berita-artikel">KEBUMEN, DIVAPRINTER.COM - </span>Pada era digital, pencetak dokumen atau printer masih dibutuhkan kehadirannya, baik untuk keperluan pribadi maupun perusahaan. Banyak orang memang sudah memanfaatkan dokumen digital, tetapi dokumen berbentuk fisik juga masih diperlukan, terutama dokumen-dokumen yang berkaitan dengan kepentingan perusahaan. Selain itu, firma arsitek sebagai perusahaan yang berhubungan dengan rancangan sebuah bangunan juga masih membutuhkan printer untuk mencetak blueprint dan file rancang bangun berformat besar. Dengan masih tingginya kebutuhan industri akan printer, banyak produsen berlomba-lomba menghadirkan printer dengan teknologi mutakhir.
+        <br><br>
+        Namun, pemilihan printer tak hanya sebatas kecanggihannya saja. Ada beberapa faktor lain yang mesti diperhatikan, misalnya apakah printer tersebut hemat biaya dan mudah dalam hal perawatan atau tidak. Untuk mengetahui faktor lain yang perlu dipahami sebelum membeli printer, simak ulasan berikut.
+        <br><br>
+        <div class="list-konten">1. Sesuaikan dengan kebutuhan</div>
+        Sebelum memutuskan membeli printer, sebaiknya pastikan terlebih dahulu kebutuhan Anda atau kantor tempat Anda bekerja. Pasalnya, spesifikasi tiap printer berbeda-beda. Misalnya, jika kebutuhan Anda hanya untuk mencetak dokumen biasa dengan jumlah yang tak terlalu banyak, printer tipe laser bisa jadi pilihan. Namun, bila membutuhkan printer yang lebih multifungsi, Anda bisa memilih all-in-one inkjet printer yang bisa digunakan untuk mencetak segala dokumen, memindai (scan), dan menyalin (copy). 
+        </div>
+      </div>
+
+      <div class="baca-juga">Baca Juga</div>
+      <div class="container-fluid border-bottom mb-3">
+        <div class="row">
+          {% for baca in artikel %}
+          <div class="col-lg-6 col-12 pb-4 pt-1">
+            <a href="/home/article/{{ baca['routing'] }}" style="text-decoration: none; color: #343538;" class="side">
+              <div class="container d-flex">
+                <img src="{{ baca.img }}" class="rounded img-side-baca">
+                  <div class="title-side-baca">{{ baca.judul }}
+                  <div class="text-muted-side mt-1"><i class="fa fa-clock-o"></i> {{ baca.tanggal }}</div>
+                  </div>
+              </div>
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="list-konten">2. Beli dalam kondisi baru dan resmi</div>
+        <div class="isi-konten">Membeli printer sama saja dengan berinvestasi. Jadi, lebih baik membeli printer dalam kondisi baru dibandingkan printer bekas pakai (second). Meskipun harus merogoh kocek lebih dalam, membeli printer baru akan memberikan Anda jaminan produk yang lebih berkualitas.
+        <br><br>
+        <div class="list-konten">3. Memilih merek printer tepercaya</div>
+        Memilih merek printer yang tepercaya juga menjadi faktor penting yang perlu Anda perhatikan. Jangan sampai salah membeli merek printer tertentu hanya karena harganya lebih murah, tetapi kualitas tidak mumpuni.
+        <br><br>
+        <div class="list-konten">4. Ketahui biaya pembelian dan pengeluaran perawatan</div>
+        Saat membeli printer, sebaiknya Anda tak hanya terfokus pada harga beli saja. Namun, Anda juga harus memperhitungkan pengeluaran pemakaian dan perawatan. Pasalnya, percuma saja jika membeli printer dengan harga terjangkau apabila biaya perawatannya selangit. Adapun keperluan pemakaian dan perawatan printer meliputi biaya konsumsi tinta, penggantian tangki tinta, pembersihan saluran tinta, serta perawatan printhead secara berkala.  
+        </div>
+        <div class="list-konten">5. Cek kondisi printer Last but not least</div>
+        Kondisi printer yang Anda pilih. Meskipun printer yang Anda beli dalam kondisi baru, tak menutup kemungkinan adanya gangguan operasional. Jadi, jangan lupa untuk melakukan pengecekan fisik dan pastikan printer bekerja secara optimal dengan melakukan pengetesan di tempat Anda membeli, ya.
+      </div>
+
+      <div class="container slider-news border-top border-bottom"> 
+        <div class="row">
+            
+            <div class="col-6">
+              <a href="/home/article/{{ 'SSD-atau-Hardisk-Mana-yang-Lebih-Baik' }}" class="prev-next">
+                <div class="title-prev">
+                  Previous Post
+                </div>
+                <div class="container container-prevnext">
+                  <div class="title-next">
+                      {{ p }}
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-6">
+              <a href="/home/article/{{ 'Review-Printer-Epson-L3110:-Spesifikasi-dan-Keunggulannya' }}" class="prev-next">
+                <div class="title-prev">
+                  Next Post
+                </div>
+                <div class="container container-prevnext">
+                  <div class="title-next">
+                      {{ n }}
+                  </div>
+                </div>
+              </a>
+            </div>            
+
+        </div>
+      </div>
+
+      <div class="baca-juga">
+        Related Post
+      </div>
+
+      <div class="row mb-4">
+        <div class="col-4">
+          <a href="/home/article/{{ 'Review-Printer-Epson-L3110:-Spesifikasi-dan-Keunggulannya' }}" class="related-post" style="text-decoration: none;">
+            <div class="container d-block">
+              <img src="/static/img/artikel-3.png" class="rounded img-bottom-baca">
+                <div class="title-bottom-baca">Review Printer Epson L3110: Spesifikasi dan Keunggulannya.
+              <div class="text-muted-side mt-1"><i class="fa fa-clock-o"></i> JUNI, 2022</div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-4">
+          <a href="/home/article/{{ '5-Tips-Memilih-Printer-Lebih-Baik-Sedikit-Mahal-tetapi-Awet-dan-Hemat-Biaya-Perawatan' }}" class="related-post" style="text-decoration: none;">
+            <div class="container d-block">
+              <img src="/static/img/toko.jpg" class="rounded img-bottom-baca">
+                <div class="title-bottom-baca">5 Tips Memilih Printer, Lebih Baik Sedikit Mahal tetapi Awet dan Hemat Biaya Perawatan.
+              <div class="text-muted-side mt-1"><i class="fa fa-clock-o"></i> JUNI, 2022</div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-4">
+          <a href="/home/article/{{ 'SSD-atau-Hardisk-Mana-yang-Lebih-Baik' }}" class="related-post" style="text-decoration: none;">
+            <div class="container d-block">
+              <img src="/static/img/artikel-2.jpg" class="rounded img-bottom-baca">
+                <div class="title-bottom-baca">SSD atau Hardisk? Mana yang Lebih Baik.
+              <div class="text-muted-side mt-1"><i class="fa fa-clock-o"></i> JUNI, 2022</div>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+      </div>
+
+    </div>
+
+    <div class="col-lg-4 col-12">
+      <div class="wrapper border">
+        <div class="box">
+          <input checked="checked" id="box1" name="box" type="radio"> 
+          <label for="box1">Trending</label>
+          <div class="content-1">
+
+            <!-- Artikel SideBar Kanan -->
+            {% for side in artikel %}
+            <a href="/home/article/{{ side['routing'] }}" style="text-decoration: none;" class="side" >
+              <div class="container d-flex">
+                <img src="{{ side.img }}" class="rounded img-side" style="width: 100%">
+                <div class="title-side">{{ side.judul }}
+                  <div class="text-muted-side mt-1"><i class="fa fa-clock-o"></i> {{ side.tanggal }}</div>
+                </div>
+              </div>
+            </a>
+            {% endfor %}
+
+          </div>
+
+          <input id="box2" name="box" type="radio"> 
+          <label for="box2">Comments</label>
+          <div class="content-2">
+            ...
+          </div>
+          <input id="box3" name="box" type="radio"> 
+          <label for="box3">Latest</label>
+          <div class="content-3">
+
+            <!-- Artikel SideBar Kanan -->
+            {% for side in artikel %}
+            <a href="/home/article/{{ side['routing'] }}" style="text-decoration: none;" class="side" >
+              <div class="container d-flex">
+                <img src="{{ side.img }}" class="rounded img-side" style="width: 100%">
+                <div class="title-side">{{ side.judul }}
+                  <div class="text-muted-side mt-1"><i class="fa fa-clock-o"></i> {{ side.tanggal }}</div>
+                </div>
+              </div>
+            </a>
+            {% endfor %}
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}  

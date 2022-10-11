@@ -1,0 +1,216 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<head>
+  <title>{% if judul_head %} {{judul_head}} - {% endif %} DIVA PRINTER</title>
+</head>
+{% endblock %}
+
+{% block body %} 
+<div class="container-fluid p-0 m-0">
+  <div class="topnav" id="idNav">
+    <a class="active" href="{{ url_for('home') }}" style="width: 220px; height: auto; padding: 15px;">
+      <img src="/static/img/logodivaprinter.png" style="width: 100%; object-fit: cover; overflow: hidden;">
+    </a>
+    <a href="{{ url_for('home') }}">Beranda</a>
+    <a href="{{ url_for('service') }}">Layanan Kami</a>
+    <a href="{{ url_for('about') }}">Tentang Kami</a>
+    <a href="{{ url_for('article') }}">Artikel</a>
+    <a href="javascript:void(0)" class="icon" onclick="proses()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row row-page-article">
+    <div class="col-lg-8 col-12 d-block border column-row-article mb-3" style="padding: 10px;">
+      <div class="span-container" style="padding: 10px 12px 10px;">
+          <span class="span-first-link"><a href="{{ url_for('home') }}">Home</a></span>
+          <span><i class="fa fa-angle-right span-fa"></i></span>
+          <span class="span-last-link"><a href="{{ url_for('article') }}">Article</a></span>
+      </div>
+      <div class="title-page-article">SSD ATAU HARDISK? MANA YANG LEBIH BAIK?</div>
+      <div class="container span-time-article d-flex">
+        <div class="sta-left">
+          <span>BY</span>
+          <span><a href="#">DIFADIN</a></span>
+          <span><i class="fa fa-clock-o"></i> AGUSTUS 31, 2022</span>
+          <span>IN</span>
+          <span><a href="#">ARTICLE</a></span>
+          <span><i class="fa fa-comment-o"></i></span>
+          <span>0</span>
+        </div>
+      </div>
+      <div class="container text-center">
+        <img class="img-page-article" src="/static/img/artikel-2.jpg">
+      </div>
+
+      <div class="container-fluid pt-4 pb-1" style="text-align: center;">
+        <div class="addthis_inline_share_toolbox"></div>
+      </div>
+      <!-- Konten Artikel -->
+
+      <!-- Container Konten -->
+      <div class="container">
+        <div class="isi-konten"><span class="berita-artikel">KEBUMEN, DIVAPRINTER.COM - </span>Pada dasarnya, SSD dan HDD memiliki fungsi yang sama: menyimpan aplikasi dan file pribadi serta menjalankan booting sistem. Jika Anda ingin menambahkan kecepatan pada PC desktop atau laptop lama, atau jika Anda sedang memilih drive untuk PC khusus, server, atau sistem khusus, bagaimana cara Anda menentukan pilihan? Apakah sebaiknya Anda memilih SSD (solid-state drive) atau HDD (hard disk drive)?
+        <br><br>
+        Pertama, keduanya dirancang dengan cara yang sangat berbeda. SSD dibuat menggunakan teknologi penyimpanan non-volatile yang disebut flash NAND, dan tidak memerlukan daya untuk menyimpan data.
+        <br><br>
+        Sejak pertengahan tahun 1950, komputer telah menggunakan HDD yang fungsinya didasarkan piringan berputar magnetis. HDD menggunakan head bergerak yang membaca dan menulis data ke piringan yang berputar atau disk. HDD adalah perangkat mekanis dengan banyak bagian yang bergerak dan lebih rentan terhadap kesalahan dan kegagalan mekanis karena kondisi lingkungan seperti panas, dingin, goncangan, dan getaran.
+        <br><br>
+        SSD tidak terpengaruh oleh batasan ukuran dan bentuk dari hard drive. Sementara itu, piringan HDD berbentuk lingkaran yang artinya data yang disimpan pada tepi luar lebih cepat diakses daripada data yang disimpan pada bagian tengah. Dengan drive SSD, di bagian mana data disimpan tidak menjadi masalah karena seluruh area drive diakses dengan kecepatan yang sama. Performa HDD juga terpengaruh oleh fragmentasi data. Seiring waktu, sistem operasi akan menata ulang data Anda di HDD, dan hal ini akan menciptakan data file ‘fragmen’ di mana data tidak lagi disimpan dalam kesatuan. Saat file terfragmentasi, penurunan performa akan terjadi ketika mencoba mengakses data ini. SSD tidak terpengaruh secara signifikan oleh hal ini.
+        </div>
+      </div>
+
+      <div class="baca-juga">Baca Juga</div>
+      <div class="container-fluid border-bottom mb-3">
+        <div class="row">
+          {% for baca in artikel %}
+          <div class="col-lg-6 col-12 pb-4 pt-1">
+            <a href="/home/article/{{ baca['routing'] }}" style="text-decoration: none; color: #343538;" class="side">
+              <div class="container d-flex">
+                <img src="{{ baca.img }}" class="rounded img-side-baca">
+                  <div class="title-side-baca">{{ baca.judul }}
+                  <div class="text-muted-side mt-1"><i class="fa fa-clock-o"></i> {{ baca.tanggal }}</div>
+                  </div>
+              </div>
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="list-konten">Bagaimana Dengan Kecepatannya?</div>
+        <div class="isi-konten">Sejumlah faktor menentukan kecepatan drive. Akan tetapi, banyak peninjau pada publikasi teknologi menemukan bahwa SSD lebih cepat. Sebagai contoh, jika performa baca acak dibandingkan, SSD dapat mencapai lebih dari 20.000 persen lebih cepat daripada HDD performa tinggi.
+        Bahkan sistem yang relatif baru dapat mengalami peningkatan performa yang signifikan jika meng-upgrade HDD standar ke SSD. Contohnya, SSD entry-level Kingston bekerja sepuluh kali lebih cepat dibandingkan HDD berputar dengan akses yang lebih cepat ke program dan file.
+        <br><br>
+        Jika Anda ingin tahu apakah data atau sistem operasi dapat ditransfer dari HDD ke SSD, jawabannya adalah ya. Beberapa produsen (termasuk Kingston) menawarkan kit peningkatan SSD yang mencakup semua yang dibutuhkan untuk mengganti HDD notebook atau desktop dengan SSD, termasuk perangkat lunak.
+        Kesimpulannya, jika kebutuhan utama Anda adalah penyimpanan umum massal (yaitu, gambar, film, atau data lainnya yang jarang diakses) hingga terabyte, HDD standar adalah yang terbaik. Akan tetapi, jika performa dan kecepatan penting bagi Anda, SSD adalah pilihan paling unggul. Jika sebelumnya harga SSD jauh lebih mahal dari HDD, kini selisih harga keduanya telah berkurang karena meningkatnya produksi SSD dan kapasitas drive.        
+        </div>
+      </div>
+
+      <div class="container slider-news border-top border-bottom"> 
+        <div class="row">
+            
+            <div class="col-6">
+              <a href="/home/article/{{ '6-Cara-Merawat-Printer-yang-Benar-Agar-Awet-dan-Tahan-Lama' }}" class="prev-next">
+                <div class="title-prev">
+                  Previous Post
+                </div>
+                <div class="container container-prevnext">
+                  <div class="title-next">
+                      {{ p }}
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-6">
+              <a href="/home/article/{{ '5-Tips-Memilih-Printer-Lebih-Baik-Sedikit-Mahal-tetapi-Awet-dan-Hemat-Biaya-Perawatan' }}" class="prev-next">
+                <div class="title-prev">
+                  Next Post
+                </div>
+                <div class="container container-prevnext">
+                  <div class="title-next">
+                      {{ n }}
+                  </div>
+                </div>
+              </a>
+            </div>            
+
+        </div>
+      </div>
+
+      <div class="baca-juga">
+        Related Post
+      </div>
+
+      <div class="row mb-4">
+        <div class="col-4">
+          <a href="/home/article/{{ 'Review-Printer-Epson-L3110:-Spesifikasi-dan-Keunggulannya' }}" class="related-post" style="text-decoration: none;">
+            <div class="container d-block">
+              <img src="/static/img/artikel-3.png" class="rounded img-bottom-baca">
+                <div class="title-bottom-baca">Review Printer Epson L3110: Spesifikasi dan Keunggulannya.
+              <div class="text-muted-side mt-1"><i class="fa fa-clock-o"></i> JUNI, 2022</div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-4">
+          <a href="/home/article/{{ '5-Tips-Memilih-Printer-Lebih-Baik-Sedikit-Mahal-tetapi-Awet-dan-Hemat-Biaya-Perawatan' }}" class="related-post" style="text-decoration: none;">
+            <div class="container d-block">
+              <img src="/static/img/toko.jpg" class="rounded img-bottom-baca">
+                <div class="title-bottom-baca">5 Tips Memilih Printer, Lebih Baik Sedikit Mahal tetapi Awet dan Hemat Biaya Perawatan.
+              <div class="text-muted-side mt-1"><i class="fa fa-clock-o"></i> JUNI, 2022</div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-4">
+          <a href="/home/article/{{ 'SSD-atau-Hardisk-Mana-yang-Lebih-Baik' }}" class="related-post" style="text-decoration: none;">
+            <div class="container d-block">
+              <img src="/static/img/artikel-2.jpg" class="rounded img-bottom-baca">
+                <div class="title-bottom-baca">SSD atau Hardisk? Mana yang Lebih Baik.
+              <div class="text-muted-side mt-1"><i class="fa fa-clock-o"></i> JUNI, 2022</div>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+      </div>
+
+    </div>
+
+    <div class="col-lg-4 col-12">
+      <div class="wrapper border">
+        <div class="box">
+          <input checked="checked" id="box1" name="box" type="radio"> 
+          <label for="box1">Trending</label>
+          <div class="content-1">
+
+            <!-- Artikel SideBar Kanan -->
+            {% for side in artikel %}
+            <a href="/home/article/{{ side['routing'] }}" style="text-decoration: none;" class="side">
+              <div class="container d-flex">
+                <img src="{{ side.img }}" class="rounded img-side" style="width: 100%">
+                <div class="title-side">{{ side.judul }}
+                  <div class="text-muted-side mt-1"><i class="fa fa-clock-o"></i> {{ side.tanggal }}</div>
+                </div>
+              </div>
+            </a>
+            {% endfor %}
+
+          </div>
+
+          <input id="box2" name="box" type="radio"> 
+          <label for="box2">Comments</label>
+          <div class="content-2">
+            ...
+          </div>
+          <input id="box3" name="box" type="radio"> 
+          <label for="box3">Latest</label>
+          <div class="content-3">
+
+            <!-- Artikel SideBar Kanan -->
+            {% for side in artikel %}
+            <a href="/home/article/{{ side['routing'] }}" style="text-decoration: none;" class="side">
+              <div class="container d-flex">
+                <img src="{{ side.img }}" class="rounded img-side" style="width: 100%">
+                <div class="title-side">{{ side.judul }}
+                  <div class="text-muted-side mt-1"><i class="fa fa-clock-o"></i> {{ side.tanggal }}</div>
+                </div>
+              </div>
+            </a>
+            {% endfor %}
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}  
